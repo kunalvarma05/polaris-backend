@@ -78,4 +78,12 @@ $(document).ready(function(){
         $("#select").addClass("hide");
         initialize();
     });
+
+    $("#video").click(function(e) {
+        initialize();
+    });
+
+    setTimeout(function() {
+        $(".cover").fadeOut(500);
+    }, 3000);
 });

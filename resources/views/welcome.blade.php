@@ -14,6 +14,7 @@
             margin: 0;
             padding: 0;
         }
+
         .select {
             position: fixed;
             z-index: 500;
@@ -25,13 +26,36 @@
             color: #fff;
             padding: 40px;
         }
+
         select, button {
             padding: 12px;
             border: none;
             background: #fff;
             color: #222;
         }
-        container {
+
+        .cover {
+            z-index: 1000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background: #43339b;
+            text-align: center;
+        }
+
+        .cover img {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            padding-top: 15%;
+            display: block;
+        }
+
+        .container {
             position: fixed;
             top: 0;
             left: 0;
@@ -40,9 +64,21 @@
             height: 100%;
             width: 100%;
         }
+
+        .cover .loader {
+            width: 100px;
+            height: 100px;
+            padding-top: 1%;
+            text-align: center;
+            margin: auto;
+            margin-top: -30px;
+            display: block;
+        }
+
         .hide {
             display: none;
         }
+
         canvas {
             position: fixed;
             top: 0;
@@ -50,6 +86,7 @@
             height: 100%;
             width: 100%;
         }
+
         #output {
             display: none;
         }
@@ -61,6 +98,10 @@
 
 <div id="container">
 
+    <div class="cover">
+        <img src="./logo.png" class="logo">
+        <img src="./loader.svg" class="loader">
+    </div>
     <video id="video" muted autoplay></video>
     <canvas id="canvas"></canvas>
     <ul id="output"></ul>
