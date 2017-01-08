@@ -1,0 +1,41 @@
+"use strict";
+
+var video, $output;
+var scale = 1;
+
+var initialize = function () {
+    $output = $("#output");
+    video = $("#video").get(0);
+    setTimeout(captureImage, 3000);
+};
+
+var captureImage = function () {
+    var canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth * scale;
+    canvas.height = video.videoHeight * scale;
+    canvas.getContext('2d')
+        .drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    var img = document.createElement("img");
+    img.src = canvas.toDataURL();
+    img.setAttribute("id", "result");
+    $output.prepend(img);
+
+    sendImage(img.src);
+};
+
+var sendImage = function (data) {
+    // Assign handlers immediately after making the request,
+    // and remember the jqxhr object for this request
+    var url = window.location.href + "/api";
+    alert('Sending...');
+    var jqxhr = $.post(url, {"image": data, "url": window.location.href}, function (data) {
+        alert(data);
+    })
+        .fail(function () {
+            console.log("error");
+        })
+        .always(function () {
+            console.log("finished");
+        });
+}
