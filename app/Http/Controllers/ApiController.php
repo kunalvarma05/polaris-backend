@@ -44,12 +44,23 @@ class ApiController extends Controller
             }
         }
 
-        return $this->getInfo($result->name);
+        $info = $this->getInfo($result->name);
+        $recomm = $this->getRecomm($info);
+
+        return ["info" => $info, "recommendations" => $recomm];
     }
 
     public function getInfo($q) {
         $r = $this->client->request('POST', '/find', [
             'json' => ['query' => $q]
+        ]);
+
+        return $r->getBody();
+    }
+
+    public function getRecomm($q) {
+        $r = $this->client->request('POST', '/recommendation', [
+            'json' => json_decode($q)
         ]);
 
         return $r->getBody();
