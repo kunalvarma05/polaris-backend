@@ -45,9 +45,9 @@ class ApiController extends Controller
         }
 
         $info = $this->getInfo($result->name);
+        return $info;
         $recomm = $this->getRecomm($info);
 
-        return ["info" => $info, "recommendations" => $recomm];
     }
 
     public function getInfo($q) {
