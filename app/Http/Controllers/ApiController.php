@@ -45,6 +45,7 @@ class ApiController extends Controller
         }
 
         $info = $this->getInfo($result->name);
+        dd($info);
         $recomm = $this->getRecomm($info);
         return $recomm;
 
