@@ -75,6 +75,7 @@ start("init");
 
 $(document).ready(function(){
     $("#button").click(function(e) {
+        $("#select").addClass("hide");
         initialize();
     });
 });

@@ -14,6 +14,23 @@
             margin: 0;
             padding: 0;
         }
+        .select {
+            position: fixed;
+            z-index: 500;
+            top: 20%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 40px;
+        }
+        select, button {
+            padding: 12px;
+            border: none;
+            background: #fff;
+            color: #222;
+        }
         container {
             position: fixed;
             top: 0;
@@ -23,7 +40,7 @@
             height: 100%;
             width: 100%;
         }
-        div.hide {
+        .hide {
             display: none;
         }
         canvas {
@@ -46,14 +63,12 @@
 
     <video id="video" muted autoplay></video>
     <canvas id="canvas"></canvas>
-    <div class="select hide">
-        <label for="audioSource">Audio source: </label><select id="audioSource"></select>
-    </div>
     <ul id="output"></ul>
 
-    <div class="select">
-        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    <div class="select" id="select">
+        <select id="videoSource"></select>
         <button id="button">Start</button>
+        <select class="hide" id="audioSource"></select>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="./js/popcorn.js"></script>

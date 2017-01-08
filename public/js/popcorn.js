@@ -6,7 +6,7 @@ var scale = 1;
 var initialize = function () {
     $output = $("#output");
     video = $("#video").get(0);
-    setTimeout(captureImage, 3000);
+    captureImage();
 };
 
 var captureImage = function () {
