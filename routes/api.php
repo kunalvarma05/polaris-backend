@@ -13,6 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function (Request $request) {
-    return config("app.name");
-})->middleware('auth:api');
+Route::post('/', ['uses' => "ApiController@getSuggestions"]);
