@@ -45,10 +45,17 @@ class ApiController extends Controller
         }
 
         $info = $this->getInfo($result->name);
-        dd((string) $info);
-        $recomm = $this->getRecomm($info);
-        return $recomm;
+        $infoRet = json_decode($info);
+        $qtt = [
+            "title" => $infoRet->title,
+            "startPrice" => ((int) $infoRet->allPrices[0]->price) * 0.8,
+            "endPrice" => ((int) $infoRet->allPrices[count($infoRet->allPrices) - 1]->price) * 1.2,
+        ];
 
+        $recomm = $this->getRecomm(json_encode($qtt));
+        $recInfo = json_decode($recomm);
+
+        return ["info" => $infoRet, "recommendations" => $recomm];
     }
 
     public function getInfo($q) {
