@@ -27,7 +27,8 @@ var captureImage = function () {
 var sendImage = function (data) {
     // Assign handlers immediately after making the request,
     // and remember the jqxhr object for this request
-    var url = window.location.href + "/api";
+    var base = window.location.href.charAt(window.location.href.length) === "/" ? window.location.href : window.location.href + "/";
+    var url = base + "api";
     alert('Sending...');
     var jqxhr = $.post(url, {"image": data, "url": window.location.href}, function (data) {
         alert(data);
