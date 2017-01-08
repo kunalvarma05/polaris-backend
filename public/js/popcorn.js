@@ -1,7 +1,7 @@
 "use strict";
 
 var video, $output;
-var scale = 1;
+var scale = 0.65;
 
 var initialize = function () {
     $output = $("#output");
