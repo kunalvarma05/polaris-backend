@@ -55,7 +55,7 @@ class ApiController extends Controller
         $recomm = $this->getRecomm(json_encode($qtt));
         $recInfo = json_decode($recomm);
 
-        return ["info" => $infoRet, "recommendations" => $recomm];
+        return ["info" => $infoRet, "recommendations" => $recInfo];
     }
 
     public function getInfo($q) {
