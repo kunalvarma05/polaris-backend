@@ -18,7 +18,7 @@ var render = function(data) {
     console.log(recommendations.length);
     if (recommendations.length != undefined) {
         recommendations.forEach(function (el) {
-            var html = '<div>';
+            html = '<div>';
             html += "<h4><a href='" + el.default.url + "'>" + el.title + "</a></h4>";
             html += "<h5>" + el.default.price + "</h5>";
             html += "<div class='prices'><h4>Prices</h4>";

@@ -30,6 +30,7 @@ var sendImage = function (data) {
     var base = window.location.href.charAt(window.location.href.length - 1) === "/" ? window.location.href : window.location.href + "/";
     var url = base + "api";
     $("#wait").fadeIn(300);
+    jQuery(".drawer").addClass("hide");
     var jqxhr = $.post(url, {"image": data, "url": window.location.href}, function (data) {
         render(data);
     })
