@@ -113,18 +113,24 @@
         }
 
         .wait {
+            z-index: 1000;
             position: fixed;
             top: 0;
             right: 0;
-            padding: 10px;
+            padding: 30px;
             background: rgba(0,0,0, 0.5);
             display: none;
             text-align: center;
         }
 
         .wait img {
-            width: 30px;
-            height: 30px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .wait p {
+            margin: 0;
+            margin-top: 10spx;
         }
 
         .drawer {
@@ -194,6 +200,7 @@
     </div>
     <div class="wait" id="wait">
         <img src="./loader.svg">
+        <p>Polaris is working...</p>
     </div>
     <div class="prod" id="p-title"></div>
 
