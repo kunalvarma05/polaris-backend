@@ -29,6 +29,7 @@ var sendImage = function (data) {
     // and remember the jqxhr object for this request
     var base = window.location.href.charAt(window.location.href.length - 1) === "/" ? window.location.href : window.location.href + "/";
     var url = base + "api";
+    $("#wait").fadeIn(300);
     var jqxhr = $.post(url, {"image": data, "url": window.location.href}, function (data) {
         render(data);
     })
@@ -36,6 +37,7 @@ var sendImage = function (data) {
             console.log("error");
         })
         .always(function () {
+            $("#wait").fadeOut(300);
             console.log("finished");
         });
 }

@@ -112,6 +112,21 @@
             object-fit: cover;
         }
 
+        .wait {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(0,0,0, 0.5);
+            display: none;
+            text-align: center;
+        }
+
+        .wait img {
+            width: 30px;
+            height: 30px;
+        }
+
         .drawer {
             position: fixed;
             bottom: 0;
@@ -176,6 +191,9 @@
     <div class="cover">
         <img src="./logo.png" class="logo">
         <img src="./loader.svg" class="loader">
+    </div>
+    <div class="wait" id="wait">
+        <img src="./loader.svg">
     </div>
     <div class="prod" id="p-title"></div>
 
