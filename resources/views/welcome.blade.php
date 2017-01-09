@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <meta itemprop="name" content="simpl.info: simplest possible examples of HTML, CSS and JavaScript">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta id="theme-color" name="theme-color" content="#fff">
+    <meta id="theme-color" name="theme-color" content="#43339b">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <base target="_blank">
 
@@ -60,8 +61,8 @@
             width: 100%;
             height: auto;
             max-width: 500px;
-            padding-top: 15%;
             display: block;
+            margin: auto;
         }
 
         .container {
@@ -117,7 +118,6 @@
             position: fixed;
             top: 0;
             right: 0;
-            padding: 30px;
             background: rgba(0,0,0, 0.5);
             display: none;
             text-align: center;
@@ -126,11 +126,14 @@
         .wait img {
             width: 60px;
             height: 60px;
+            padding: 30px;
         }
 
         .wait p {
             margin: 0;
-            margin-top: 10spx;
+            padding: 10px;
+            background: #43339b;
+            color: #fff;
         }
 
         .drawer {
